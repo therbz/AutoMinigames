@@ -1,0 +1,11 @@
+name: RandomEvents
+api-version: 1.17
+author: therbz
+version: 0.1
+main: me.therbz.randomevents.RandomEvents
+softdepend: [PlaceHolderAPI]
+commands:
+  startevent:
+    usage: /startevent <event> <seconds>
+    description: Start a new event
+    #aliases: [revents]
