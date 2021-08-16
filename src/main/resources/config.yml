@@ -1,0 +1,10 @@
+messages:
+  help:
+    - "&8&m--------------------------------"
+    - "&r         &6&lRandomEvents &8- &7Help"
+    - "&r"
+    - "&e/randomevents help"
+    - "&7Displays this help menu"
+    - "&e/randomevents score"
+    - "&7Check your current score in an ongoing event"
+    - "&8&m--------------------------------"

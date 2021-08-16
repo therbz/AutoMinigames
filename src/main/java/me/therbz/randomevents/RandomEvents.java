@@ -10,7 +10,7 @@ public class RandomEvents extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        this.getCommand("startevent").setExecutor(new Commands(this));
+        this.getCommand("randomevents").setExecutor(new Commands(this));
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new PAPIHook(this).register();

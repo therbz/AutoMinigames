@@ -5,7 +5,14 @@ version: 0.1
 main: me.therbz.randomevents.RandomEvents
 softdepend: [PlaceHolderAPI]
 commands:
-  startevent:
-    usage: /startevent <event> <seconds>
-    description: Start a new event
-    #aliases: [revents]
+  randomevents:
+    usage: /randomevents <help | [startevent <event> <seconds>] | stopevent>
+    description: Main plugin command
+    aliases: [revents]
+permissions:
+  randomevents.user:
+    description: Allows the user to participate in and execute basic user commands
+    children:
+      randomevents.admin: true
+  randomevents.admin:
+    description: Allows high-level admin commands to be used

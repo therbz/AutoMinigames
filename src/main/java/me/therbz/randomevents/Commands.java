@@ -1,9 +1,7 @@
 package me.therbz.randomevents;
 
-import me.therbz.randomevents.events.BlocksMinedRandomEvent;
-import me.therbz.randomevents.events.FishingRandomEvent;
-import me.therbz.randomevents.events.MobsKilledRandomEvent;
-import me.therbz.randomevents.events.RandomEvent;
+import me.therbz.randomevents.RandomEvents;
+import me.therbz.randomevents.commands.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,45 +16,45 @@ public class Commands implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
+        // Check for permission
+        if (!sender.hasPermission("randomevents.user")) {
+            sender.sendMessage("No permission!");
+            return true;
+        }
 
-        if (cmd.getName().equalsIgnoreCase("startevent")) {
-            if (args.length < 2) {
-                return false;
-            }
+        if (args[0].equalsIgnoreCase("help")) {
+            return new HelpCommand().run(main, sender, cmd, label, args);
+        }
 
-            Integer length;
-
-            try {
-                length = Integer.parseInt(args[1]) * 20;
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-                sender.sendMessage("Not a number!");
+        if (args[0].equalsIgnoreCase("startevent")) {
+            if (!sender.hasPermission("randomevents.admin")) {
+                sender.sendMessage("No permission!");
                 return true;
             }
 
-            RandomEvent gameEvent = null;
+            return new StartEventCommand().run(main, sender, cmd, label, args);
+        }
 
-            switch (args[0]) {
-                case "blocksMined":
-                    gameEvent = new BlocksMinedRandomEvent(this.main, length);
-                    break;
-
-                case "mobsKilled":
-                    gameEvent = new MobsKilledRandomEvent(this.main, length);
-                    break;
-
-                case "fishing":
-                    gameEvent = new FishingRandomEvent(this.main, length);
-                    break;
-
-                default:
-                    sender.sendMessage("Not an event!");
-                    return true;
+        if (args[0].equalsIgnoreCase("stopevent")) {
+            if (!sender.hasPermission("randomevents.admin")) {
+                sender.sendMessage("No permission!");
+                return true;
             }
 
-            main.getLogger().info("Started a new event: " + gameEvent.getClass().getName() + " lasting for " + args[1] + " seconds.");
+            return new StopEventCommand().run(main, sender, cmd, label, args);
+        }
 
-            return true;
+        if (args[0].equalsIgnoreCase("score")) {
+            if (args.length == 1) {
+                return new ScoreSelfCommand().run(main, sender, cmd, label, args);
+            }
+
+            if (!sender.hasPermission("randomevents.scoreothers")) {
+                sender.sendMessage("No permission!");
+                return true;
+            }
+
+            return new ScoreOtherCommand().run(main, sender, cmd, label, args);
         }
 
         return false;

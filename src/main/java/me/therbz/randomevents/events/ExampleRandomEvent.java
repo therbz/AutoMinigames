@@ -16,7 +16,6 @@ public class ExampleRandomEvent extends RandomEvent {
         super(main, length);
     }
 
-
     @Override
     public @NotNull String getName() {
         return "Example Event";
