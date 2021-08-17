@@ -43,7 +43,7 @@ public class CollectablesRandomEvent extends RandomEvent {
     }
 
     private void spawnChicken(Player player) {
-        double square_radius = 10;
+        double square_radius = 25;
         double diff_x = ((Math.random() * 2) - 1) * square_radius;
         double diff_z = ((Math.random() * 2) - 1) * square_radius;
         Location playerLocation = player.getLocation();
@@ -57,9 +57,9 @@ public class CollectablesRandomEvent extends RandomEvent {
 
         chickens.get(player.getUniqueId()).add(spawnedEntity.getUniqueId());
 
-        spawnedEntity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 1000000, 127));
         spawnedEntity.setHealth(0.1);
         spawnedEntity.setCustomName(CUSTOM_CHICKEN_NAME);
+        spawnedEntity.setCustomNameVisible(true);
 
         //this.main.getLogger().info("Spawned new chicken");
     }
