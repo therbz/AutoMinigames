@@ -37,21 +37,24 @@ public class PAPIHook extends PlaceholderExpansion {
     public String onRequest(OfflinePlayer player, String params) {
         if (params.equalsIgnoreCase("score")) {
             RandomEvent event = main.getCurrentEvent();
-            if (event == null) { return ""; }
-            return String.valueOf(main.getCurrentEvent().getScore(player.getUniqueId()));
+            //if (event == null) { return ""; }
+            //return String.valueOf(main.getCurrentEvent().getScore(player.getUniqueId()));
+            return (event == null) ? "" : String.valueOf(main.getCurrentEvent().getScore(player.getUniqueId()));
         }
 
         if (params.equalsIgnoreCase("current_event")) {
             RandomEvent event = main.getCurrentEvent();
-            if (event == null) { return ""; }
-            return main.getCurrentEvent().getName();
+            //if (event == null) { return ""; }
+            //return main.getCurrentEvent().getName();
+            return (event == null) ? "" : main.getCurrentEvent().getName();
         }
 
         if (params.equalsIgnoreCase("event_ongoing")) {
-            if (main.getCurrentEvent() != null) {
-                return "true";
-            }
-            return "false";
+            //if (main.getCurrentEvent() != null) {
+            //    return "true";
+            //}
+            //return "false";
+            return (main.getCurrentEvent() != null) ? "true" : "false";
         }
 
         return null;

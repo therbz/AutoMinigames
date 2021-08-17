@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
 public class Commands implements CommandExecutor {
-    private RandomEvents main;
+    private final RandomEvents main;
 
     public Commands(RandomEvents main) {
         this.main = main;

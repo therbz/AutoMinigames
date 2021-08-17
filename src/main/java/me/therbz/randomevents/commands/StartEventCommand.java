@@ -1,21 +1,19 @@
 package me.therbz.randomevents.commands;
 
 import me.therbz.randomevents.RandomEvents;
-import me.therbz.randomevents.events.BlocksMinedRandomEvent;
-import me.therbz.randomevents.events.FishingRandomEvent;
-import me.therbz.randomevents.events.MobsKilledRandomEvent;
-import me.therbz.randomevents.events.RandomEvent;
+import me.therbz.randomevents.events.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-public class StartEventCommand implements CommandInterface {
-    @Override
+public class StartEventCommand {
     public boolean run(RandomEvents main, CommandSender sender, Command cmd, String label, String[] args) {
+        if (main.getCurrentEvent() != null) { return true; }
+
         if (args.length < 3) {
             return false;
         }
 
-        Integer length;
+        int length;
         try {
             length = Integer.parseInt(args[2]) * 20;
         } catch (NumberFormatException e) {
@@ -36,6 +34,10 @@ public class StartEventCommand implements CommandInterface {
 
             case "fishing":
                 gameEvent = new FishingRandomEvent(main, length);
+                break;
+
+            case "chickens":
+                gameEvent = new CollectablesRandomEvent(main, length);
                 break;
 
             default:
