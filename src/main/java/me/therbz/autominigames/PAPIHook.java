@@ -1,14 +1,14 @@
-package me.therbz.randomevents;
+package me.therbz.autominigames;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import me.therbz.randomevents.events.RandomEvent;
+import me.therbz.autominigames.minigames.Minigame;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 
 public class PAPIHook extends PlaceholderExpansion {
-    final private RandomEventsMain main;
+    final private AutoMinigames main;
 
-    public PAPIHook(RandomEventsMain main) {
+    public PAPIHook(AutoMinigames main) {
         this.main = main;
     }
 
@@ -19,7 +19,7 @@ public class PAPIHook extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getIdentifier() {
-        return "RandomEvents";
+        return "AutoMinigames";
     }
 
     @Override
@@ -36,24 +36,16 @@ public class PAPIHook extends PlaceholderExpansion {
     @Override
     public String onRequest(OfflinePlayer player, String params) {
         if (params.equalsIgnoreCase("score")) {
-            RandomEvent event = main.getCurrentEvent();
-            //if (event == null) { return ""; }
-            //return String.valueOf(main.getCurrentEvent().getScore(player.getUniqueId()));
-            return (event == null) ? "" : String.valueOf(main.getCurrentEvent().getScore(player.getUniqueId()));
+            Minigame event = main.getCurrentEvent();
+            return (event == null) ? "" : String.valueOf(event.getScore(player.getUniqueId()));
         }
 
         if (params.equalsIgnoreCase("current_event")) {
-            RandomEvent event = main.getCurrentEvent();
-            //if (event == null) { return ""; }
-            //return main.getCurrentEvent().getName();
-            return (event == null) ? "" : main.getCurrentEvent().getName();
+            Minigame event = main.getCurrentEvent();
+            return (event == null) ? "" : event.getName();
         }
 
         if (params.equalsIgnoreCase("event_ongoing")) {
-            //if (main.getCurrentEvent() != null) {
-            //    return "true";
-            //}
-            //return "false";
             return (main.getCurrentEvent() != null) ? "true" : "false";
         }
 

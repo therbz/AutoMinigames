@@ -1,6 +1,6 @@
-package me.therbz.randomevents.events;
+package me.therbz.autominigames.minigames;
 
-import me.therbz.randomevents.RandomEventsMain;
+import me.therbz.autominigames.AutoMinigames;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
@@ -13,12 +13,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class CollectablesRandomEvent extends RandomEvent {
-    private RandomEventsMain main;
+public class CollectablesMinigame extends Minigame {
+    private AutoMinigames main;
     private HashMap<UUID, ArrayList<UUID>> chickens;
     private final String CUSTOM_CHICKEN_NAME = "§c§lEvent Chicken §7(Punch)";
 
-    public CollectablesRandomEvent(RandomEventsMain main, int length) {
+    public CollectablesMinigame(AutoMinigames main, int length) {
         super(main, length);
         chickens = new HashMap<>();
 

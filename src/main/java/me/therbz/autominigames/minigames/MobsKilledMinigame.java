@@ -1,6 +1,6 @@
-package me.therbz.randomevents.events;
+package me.therbz.autominigames.minigames;
 
-import me.therbz.randomevents.RandomEventsMain;
+import me.therbz.autominigames.AutoMinigames;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDeathEvent;
@@ -8,8 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-public class MobsKilledRandomEvent extends RandomEvent {
-    public MobsKilledRandomEvent(RandomEventsMain main, int length) {
+public class MobsKilledMinigame extends Minigame {
+    public MobsKilledMinigame(AutoMinigames main, int length) {
         super(main, length);
     }
 

@@ -1,6 +1,6 @@
-package me.therbz.randomevents.events;
+package me.therbz.autominigames.minigames;
 
-import me.therbz.randomevents.RandomEventsMain;
+import me.therbz.autominigames.AutoMinigames;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -8,13 +8,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public abstract class RandomEvent implements Listener {
-    private RandomEventsMain main;
+public abstract class Minigame implements Listener {
+    private AutoMinigames main;
     private long lengthInTicks;
     private long timeEnd;
     private HashMap<UUID, Float> scores;
 
-    public RandomEvent(RandomEventsMain main, long lengthInTicks) {
+    public Minigame(AutoMinigames main, long lengthInTicks) {
         this.main = main;
         this.lengthInTicks = lengthInTicks;
         this.timeEnd = System.currentTimeMillis() + this.lengthInTicks * 20 * 1000;

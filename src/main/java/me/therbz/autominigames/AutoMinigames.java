@@ -1,12 +1,13 @@
-package me.therbz.randomevents;
+package me.therbz.autominigames;
 
-import me.therbz.randomevents.events.RandomEvent;
+import me.therbz.autominigames.commands.Commands;
+import me.therbz.autominigames.minigames.Minigame;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 
-public class RandomEventsMain extends JavaPlugin {
-    private RandomEvent currentEvent;
+public class AutoMinigames extends JavaPlugin {
+    private Minigame currentEvent;
 
     @Override
     public void onEnable() {
@@ -19,11 +20,11 @@ public class RandomEventsMain extends JavaPlugin {
         new MetricsLite(this, 12582);
     }
 
-    public void setCurrentEvent(@Nullable RandomEvent event) {
+    public void setCurrentEvent(@Nullable Minigame event) {
         this.currentEvent = event;
     }
 
-    public RandomEvent getCurrentEvent() {
+    public Minigame getCurrentEvent() {
         return this.currentEvent;
     }
 }

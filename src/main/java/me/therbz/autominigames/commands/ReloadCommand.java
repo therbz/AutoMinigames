@@ -1,11 +1,11 @@
-package me.therbz.randomevents.commands;
+package me.therbz.autominigames.commands;
 
-import me.therbz.randomevents.RandomEventsMain;
+import me.therbz.autominigames.AutoMinigames;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
 public class ReloadCommand {
-    public boolean run(RandomEventsMain main, CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean run(AutoMinigames main, CommandSender sender, Command cmd, String label, String[] args) {
         main.reloadConfig();
         sender.sendMessage("Reloaded the config!");
         return true;

@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.therbz</groupId>
-    <artifactId>RandomEvents</artifactId>
-    <version>1.0</version>
+    <artifactId>AutoMinigames</artifactId>
+    <version>0.0.1</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

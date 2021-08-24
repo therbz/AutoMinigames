@@ -1,15 +1,15 @@
-package me.therbz.randomevents.commands;
+package me.therbz.autominigames.commands;
 
-import me.therbz.randomevents.RandomEventsMain;
-import me.therbz.randomevents.events.RandomEvent;
+import me.therbz.autominigames.AutoMinigames;
+import me.therbz.autominigames.minigames.Minigame;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class ScoreOtherCommand {
-    public boolean run(RandomEventsMain main, CommandSender sender, Command cmd, String label, String[] args) {
-        RandomEvent event = main.getCurrentEvent();
+    public boolean run(AutoMinigames main, CommandSender sender, Command cmd, String label, String[] args) {
+        Minigame event = main.getCurrentEvent();
 
         if (event == null) {
             sender.sendMessage("There is no current event!");

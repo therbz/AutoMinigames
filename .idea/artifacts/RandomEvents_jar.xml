@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="RandomEvents:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/RandomEvents_jar</output-path>
     <root id="archive" name="RandomEvents.jar">
-      <element id="module-output" name="RandomEvents" />
+      <element id="module-output" name="AutoMinigames" />
     </root>
   </artifact>
 </component>

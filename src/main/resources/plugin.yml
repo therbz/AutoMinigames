@@ -1,18 +1,18 @@
-name: RandomEvents
+name: AutoMinigames
 api-version: 1.17
 author: therbz
 version: ALPHA-0.0.1
-main: me.therbz.randomevents.RandomEvents
+main: me.therbz.autominigames.AutoMinigames
 softdepend: [PlaceHolderAPI]
 commands:
-  randomevents:
-    usage: /randomevents <help | [startevent <event> <seconds>] | stopevent>
+  autominigames:
+    usage: /autominigames <help | [startevent <event> <seconds>] | stopevent>
     description: Main plugin command
     aliases: [revents]
 permissions:
-  randomevents.user:
+  autominigames.user:
     description: Allows the user to participate in and execute basic user commands
     children:
-      randomevents.admin: true
-  randomevents.admin:
+      autominigames.admin: true
+  autominigames.admin:
     description: Allows high-level admin commands to be used

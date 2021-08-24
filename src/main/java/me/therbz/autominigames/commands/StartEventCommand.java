@@ -1,12 +1,12 @@
-package me.therbz.randomevents.commands;
+package me.therbz.autominigames.commands;
 
-import me.therbz.randomevents.RandomEventsMain;
-import me.therbz.randomevents.events.*;
+import me.therbz.autominigames.AutoMinigames;
+import me.therbz.autominigames.minigames.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
 public class StartEventCommand {
-    public boolean run(RandomEventsMain main, CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean run(AutoMinigames main, CommandSender sender, Command cmd, String label, String[] args) {
         if (main.getCurrentEvent() != null) { return true; }
 
         if (args.length < 3) {
@@ -22,22 +22,22 @@ public class StartEventCommand {
             return true;
         }
 
-        RandomEvent gameEvent;
+        Minigame gameEvent;
         switch (args[1]) {
             case "blocksMined":
-                gameEvent = new BlocksMinedRandomEvent(main, length);
+                gameEvent = new BlocksMinedMinigame(main, length);
                 break;
 
             case "mobsKilled":
-                gameEvent = new MobsKilledRandomEvent(main, length);
+                gameEvent = new MobsKilledMinigame(main, length);
                 break;
 
             case "fishing":
-                gameEvent = new FishingRandomEvent(main, length);
+                gameEvent = new FishingMinigame(main, length);
                 break;
 
             case "chickens":
-                gameEvent = new CollectablesRandomEvent(main, length);
+                gameEvent = new CollectablesMinigame(main, length);
                 break;
 
             default:

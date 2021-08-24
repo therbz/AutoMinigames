@@ -1,15 +1,15 @@
-package me.therbz.randomevents;
+package me.therbz.autominigames.commands;
 
-import me.therbz.randomevents.commands.*;
+import me.therbz.autominigames.AutoMinigames;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
 public class Commands implements CommandExecutor {
-    private final RandomEventsMain main;
+    private final AutoMinigames main;
 
-    public Commands(RandomEventsMain main) {
+    public Commands(AutoMinigames main) {
         this.main = main;
     }
 
