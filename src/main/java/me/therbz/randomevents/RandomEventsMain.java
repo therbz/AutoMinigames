@@ -15,6 +15,8 @@ public class RandomEventsMain extends JavaPlugin {
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new PAPIHook(this).register();
         }
+
+        new MetricsLite(this, 12582);
     }
 
     public void setCurrentEvent(@Nullable RandomEvent event) {
