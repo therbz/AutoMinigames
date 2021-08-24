@@ -8,11 +8,10 @@ commands:
   autominigames:
     usage: /autominigames <help | [startevent <event> <seconds>] | stopevent>
     description: Main plugin command
-    aliases: [revents]
 permissions:
   autominigames.user:
     description: Allows the user to participate in and execute basic user commands
     children:
       autominigames.admin: true
   autominigames.admin:
-    description: Allows high-level admin commands to be used
+    description: Allows admin commands to be used

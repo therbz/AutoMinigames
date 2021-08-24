@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AutoMinigames:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutoMinigames_jar</output-path>
+    <root id="archive" name="AutoMinigames.jar">
+      <element id="module-output" name="AutoMinigames" />
+    </root>
+  </artifact>
+</component>

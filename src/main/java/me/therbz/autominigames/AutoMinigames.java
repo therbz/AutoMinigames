@@ -11,11 +11,16 @@ public class AutoMinigames extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
+
         this.getCommand("randomevents").setExecutor(new Commands(this));
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new PAPIHook(this).register();
         }
+
+
 
         new MetricsLite(this, 12582);
     }
@@ -26,5 +31,9 @@ public class AutoMinigames extends JavaPlugin {
 
     public Minigame getCurrentEvent() {
         return this.currentEvent;
+    }
+
+    public boolean isPAPIEnabled() {
+        return Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null;
     }
 }

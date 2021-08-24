@@ -1,3 +1,33 @@
+# The number of players required to start
+minimum-players: 2
+
+# How long, in seconds, every minigame lasts
+minigame-length: 300
+
+# How often, in seconds, to automatically start a minigame
+# NOTE: this does not compensate for the length of a minigame,
+#  so you will need to make sure this is larger than minigame-length
+minigame-frequency: 1800
+
+# Settings for bossbars whilst a Minigame is active.
+bossbar:
+  enabled: true
+
+  # Available: BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
+  color: WHITE
+
+  # Available: SOLID, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20, SEGMENTED_6
+  style: SOLID
+
+  progress: 100
+
+  # How often, in ticks, to update the bossbar
+  update-frequency: 20
+
+  # The text to display on the bossbar
+  # Placeholders: %current_event%, %player_score%, %player_rank%
+  text: "&6&l%current_event% &8| &7Score: &f%player_score% %player_rank%"
+
 messages:
   help:
     - "&8&m--------------------------------"
@@ -14,3 +44,5 @@ messages:
     - "&e/autominigames reload"
     - "&7Reloads the plugin's config"
     - "&8&m--------------------------------"
+
+  no-permission: "&cYou do not have permission to do this!"

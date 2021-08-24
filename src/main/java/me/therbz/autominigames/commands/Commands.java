@@ -1,6 +1,7 @@
 package me.therbz.autominigames.commands;
 
 import me.therbz.autominigames.AutoMinigames;
+import me.therbz.autominigames.AMUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,7 +18,7 @@ public class Commands implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         // Check for permission
         if (!sender.hasPermission("randomevents.user")) {
-            sender.sendMessage("No permission!");
+            AMUtils.messageSender(sender, main.getConfig().getString("messages.no-permission"));
             return true;
         }
 
@@ -27,7 +28,7 @@ public class Commands implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("startevent")) {
             if (!sender.hasPermission("randomevents.admin")) {
-                sender.sendMessage("No permission!");
+                AMUtils.messageSender(sender, main.getConfig().getString("messages.no-permission"));
                 return true;
             }
 
@@ -36,7 +37,7 @@ public class Commands implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("stopevent")) {
             if (!sender.hasPermission("randomevents.admin")) {
-                sender.sendMessage("No permission!");
+                AMUtils.messageSender(sender, main.getConfig().getString("messages.no-permission"));
                 return true;
             }
 
@@ -49,7 +50,7 @@ public class Commands implements CommandExecutor {
             }
 
             if (!sender.hasPermission("randomevents.scoreothers")) {
-                sender.sendMessage("No permission!");
+                AMUtils.messageSender(sender, main.getConfig().getString("messages.no-permission"));
                 return true;
             }
 
