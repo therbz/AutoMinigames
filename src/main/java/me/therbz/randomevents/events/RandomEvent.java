@@ -1,6 +1,6 @@
 package me.therbz.randomevents.events;
 
-import me.therbz.randomevents.RandomEvents;
+import me.therbz.randomevents.RandomEventsMain;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -9,12 +9,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public abstract class RandomEvent implements Listener {
-    private RandomEvents main;
+    private RandomEventsMain main;
     private long lengthInTicks;
     private long timeEnd;
     private HashMap<UUID, Float> scores;
 
-    public RandomEvent(RandomEvents main, long lengthInTicks) {
+    public RandomEvent(RandomEventsMain main, long lengthInTicks) {
         this.main = main;
         this.lengthInTicks = lengthInTicks;
         this.timeEnd = System.currentTimeMillis() + this.lengthInTicks * 20 * 1000;

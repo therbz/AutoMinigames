@@ -1,6 +1,6 @@
 package me.therbz.randomevents.events;
 
-import me.therbz.randomevents.RandomEvents;
+import me.therbz.randomevents.RandomEventsMain;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 
 public class BlocksMinedRandomEvent extends RandomEvent {
-    public BlocksMinedRandomEvent(RandomEvents main, int length) {
+    public BlocksMinedRandomEvent(RandomEventsMain main, int length) {
         super(main, length);
     }
 

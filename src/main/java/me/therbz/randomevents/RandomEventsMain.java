@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 
-public class RandomEvents extends JavaPlugin {
+public class RandomEventsMain extends JavaPlugin {
     private RandomEvent currentEvent;
 
     @Override

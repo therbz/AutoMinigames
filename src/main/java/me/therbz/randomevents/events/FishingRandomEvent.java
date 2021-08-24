@@ -1,6 +1,6 @@
 package me.therbz.randomevents.events;
 
-import me.therbz.randomevents.RandomEvents;
+import me.therbz.randomevents.RandomEventsMain;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerFishEvent;
@@ -9,9 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 
 public class FishingRandomEvent extends RandomEvent {
-    RandomEvents main;
+    RandomEventsMain main;
 
-    public FishingRandomEvent(RandomEvents main, int length) {
+    public FishingRandomEvent(RandomEventsMain main, int length) {
         super(main, length);
     }
 

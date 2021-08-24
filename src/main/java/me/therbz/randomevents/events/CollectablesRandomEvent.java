@@ -1,6 +1,6 @@
 package me.therbz.randomevents.events;
 
-import me.therbz.randomevents.RandomEvents;
+import me.therbz.randomevents.RandomEventsMain;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
@@ -9,18 +9,16 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
 public class CollectablesRandomEvent extends RandomEvent {
-    private RandomEvents main;
+    private RandomEventsMain main;
     private HashMap<UUID, ArrayList<UUID>> chickens;
     private final String CUSTOM_CHICKEN_NAME = "§c§lEvent Chicken §7(Punch)";
 
-    public CollectablesRandomEvent(RandomEvents main, int length) {
+    public CollectablesRandomEvent(RandomEventsMain main, int length) {
         super(main, length);
         chickens = new HashMap<>();
 

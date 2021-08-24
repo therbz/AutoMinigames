@@ -1,6 +1,5 @@
 package me.therbz.randomevents;
 
-import me.therbz.randomevents.RandomEvents;
 import me.therbz.randomevents.commands.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,9 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
 public class Commands implements CommandExecutor {
-    private final RandomEvents main;
+    private final RandomEventsMain main;
 
-    public Commands(RandomEvents main) {
+    public Commands(RandomEventsMain main) {
         this.main = main;
     }
 

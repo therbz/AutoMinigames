@@ -1,18 +1,17 @@
 package me.therbz.randomevents.events;
 
-import me.therbz.randomevents.RandomEvents;
+import me.therbz.randomevents.RandomEventsMain;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerEvent;
-import org.bukkit.event.player.PlayerFishEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
 public class ExampleRandomEvent extends RandomEvent {
-    RandomEvents main;
+    RandomEventsMain main;
 
-    public ExampleRandomEvent(RandomEvents main, int length) {
+    public ExampleRandomEvent(RandomEventsMain main, int length) {
         super(main, length);
     }
 

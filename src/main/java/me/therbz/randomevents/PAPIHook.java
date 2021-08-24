@@ -6,9 +6,9 @@ import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 
 public class PAPIHook extends PlaceholderExpansion {
-    final private RandomEvents main;
+    final private RandomEventsMain main;
 
-    public PAPIHook(RandomEvents main) {
+    public PAPIHook(RandomEventsMain main) {
         this.main = main;
     }
 
